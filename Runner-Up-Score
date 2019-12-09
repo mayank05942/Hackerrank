@@ -1,0 +1,20 @@
+
+# Problem: https://www.hackerrank.com/challenges/find-second-maximum-number-in-a-list/problem
+
+
+
+
+if __name__ == '__main__':
+    n = int(input()) # Enter the number of participants
+
+    arr = list(map(int, input().split())) # Enter scores of each particpants in single row followed by a space
+    x= max(arr) # Max value in the list
+    arr.sort()  # sort the list in ascending order
+    arr.pop(-1) # remove the max value element
+
+    for items in arr: # looping through the list
+        while arr[-1]==x: # if the last element of the list matches will the max element. This is done to take care of the duplicates in the list
+            arr.pop(-1)   # remove that element
+        else:             # if last element is not equal to max element then exit the loop and print second max value
+            break
+    print(arr[-1])
