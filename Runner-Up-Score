@@ -1,6 +1,11 @@
 
 # Problem: https://www.hackerrank.com/challenges/find-second-maximum-number-in-a-list/problem
 
+# Concept: User entered list:
+# lis=list(map(int,input('Enter the elements in the list: ').split()))
+# print(lis)
+
+# Above code will prompt the user to enter the list 
 
 
 
