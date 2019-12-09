@@ -1,0 +1,44 @@
+
+# Problem : https://www.hackerrank.com/challenges/nested-list/problem
+
+
+# Concept1: To access elements in nested list write:
+#  lis[a][b]
+# where a is the index where sub-list is stored and b is the index of the element which needs to be accessed in sublist.
+
+# Concept2: To make a nested list use:  lis.append([value1,value2])
+
+
+
+
+
+if __name__ == '__main__':
+    num=int(input()) # defines the number of students
+    lis=[]  # where name+score will be stored
+    lis1=[]  # where only score will be stored
+    
+    for item in range(num):  # iterate for each student
+        name = input() # get students name
+        score = float(input()) # get students marks
+        lis.append([name,score])  # list which contains name+score
+        lis1.append(score) #list which contains only score
+
+    lis.sort()  # arranging both in ascending order
+    lis1.sort() # strings will be arranged in alphabetical order while numbers in increasing order
+    
+    x=min(lis1)  # get min value from score list
+    lis1.pop(0)   # and remove the min value as second lowest is desired. 0 index represent min value in sorted lis1
+    for items in lis1:  # to handle multiple min values like 25 25
+        while lis1[0] == x:
+            lis1.pop(0) # remove such duplicates if exit
+        else:
+            break   # if not exit the loop
+# Note : one alternative of the above while loop is to convert list to set then set to list as set does not contain any duplicates
+# lis1=set(lis1)
+# lis1=list(lis1)
+# lis1.sort()
+# some cases might fail ( Negative marks cases) will work on this.
+
+    for i in range(len(lis)):
+        if lis[i][1] == lis1[0]: # match second min marks with student
+           print(lis[i][0]) # print user name
