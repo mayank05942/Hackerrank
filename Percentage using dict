@@ -13,3 +13,8 @@ if __name__ == '__main__':
         if key==query_name:  # if key matches with user input
             avg=(value[0]+value[1]+value[2])/3  # calculate average corresponding to it's values
             print("{:.2f}".format(avg)) #To make sure we obtain average upto 2 decimal places.
+            
+            
+ # here f represents floating point number and 2 represents degree of precision
+ 
+ # Alternate is: print(f'{avg:.2f}')
