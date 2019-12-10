@@ -1,0 +1,32 @@
+Problem:https://www.hackerrank.com/challenges/list-comprehensions/problem
+
+# Without List comprehensions:
+
+if __name__ == '__main__':
+    x = int(input())
+    y = int(input())
+    z = int(input())
+    N = int(input()) # x+y+z is not equal to N
+    lis=[]
+    for i in range(x+1): # i ranges from 0 to x
+        for j in range(y+1): # j ranges from o to y
+            for k in range(z+1): # k ranges from o to z
+                if i+j+k > N:   # find all those values of i,k,z for which this condition satisfies
+                    lis.append([i,j,k]) # create nested list
+                if i+j+k < N: 
+                    lis.append([i,j,k])
+    print(lis)
+
+# Using List Compreshension:
+if __name__ == '__main__':
+    x = int(input())
+    y = int(input())
+    z = int(input())
+    N = int(input()) # x+y+z is not equal to N
+
+#Concept of list comprehension
+#variable=[ variable to append , for loops , conditions ] 
+# [] represents list so no need to define it
+
+lis=[[i,j,k] for i in range(x+1) for j in range(y+1) for k in range(z+1) if i+j+k!=N]
+    print(lis)
