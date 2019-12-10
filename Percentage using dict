@@ -1,0 +1,15 @@
+Problem:https://www.hackerrank.com/challenges/finding-the-percentage/problem
+
+if __name__ == '__main__':
+    n = int(input()) # no of students
+    student_marks = {} # empty dict
+    for _ in range(n):
+        name, *line = input().split() # key is name and value is score
+        scores = list(map(float, line))  # scores should be in float format
+        student_marks[name] = scores  # syntax to add data to dict: dict_name[key]=value
+    query_name = input() # user name whose avg needs to be calculated
+
+    for key,value in student_marks.items():  # get key and value from the dict student_marks using items method
+        if key==query_name:  # if key matches with user input
+            avg=(value[0]+value[1]+value[2])/3  # calculate average corresponding to it's values
+            print("{:.2f}".format(avg)) #To make sure we obtain average upto 2 decimal places.
