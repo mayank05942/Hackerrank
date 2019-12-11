@@ -1,0 +1,59 @@
+Problem:https://www.hackerrank.com/challenges/beautiful-days-at-the-movies/problem
+
+
+Concept:
+
+1-Reverse of a Number:
+
+define the number
+number=str(num)
+reverse=number[::-1]
+print(reverse)
+
+2- To check wheather a number is whole or not:
+
+if num% divisor ==0 means no remainder then it is whole.
+Here divisor is some appropriate number according to the condition
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def beautifulDays(i, j, k):  # i and k define range of days and k defines divisor
+    count=0
+    for item in range(i,j+1):
+    # In below steps we are calculating the reverse of each digit
+        item=str(item)  # first convert it ti string
+        reverse=item[::-1] # reverse it 
+        reverse=int(reverse) # now it is important to convert them back to integer
+        item=int(item)
+
+        val=abs(item-reverse) 
+        if val%k ==0:  # If now remainder comes then it is whole number or integer
+            count=count+1 # In that case count ahead
+            
+    return print(count)
+    
+    
+# code below is used to call function and take inputs    
+if __name__ == '__main__':
+    os.environ['OUTPUT_PATH'] = 'junk.txt'
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    ijk = input().split()
+
+    i = int(ijk[0])
+
+    j = int(ijk[1])
+
+    k = int(ijk[2])
+
+    result = beautifulDays(i, j, k)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
