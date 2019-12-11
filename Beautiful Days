@@ -4,11 +4,23 @@ Problem:https://www.hackerrank.com/challenges/beautiful-days-at-the-movies/probl
 Concept:
 
 1-Reverse of a Number:
-
+# Method 1:
 define the number
 number=str(num)
 reverse=number[::-1]
 print(reverse)
+
+# Method 2:
+# let num=1234
+reverse=0
+while num>0:  
+    r=num%10  # this will give the last digit of the number r=4,r=3......
+    reverse=reverse*10+r # 0*10+4=4,4*10+3=43.......
+    num=num/10  #  quotient value until it is >0 num=123,num=12.......
+print(reverse)
+
+
+
 
 2- To check wheather a number is whole or not:
 
