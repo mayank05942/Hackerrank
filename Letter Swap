@@ -1,0 +1,44 @@
+Problem: https://www.hackerrank.com/challenges/swap-case/problem
+
+Concept: 1-To check Upper and lower case in string use:-
+         string_name.isupper() # this is a method of string class and will return a boolean output
+         string_name.islower() # this is a method of string class and will return a boolean output
+         
+         2-To convert upper to  lower and viceversa:
+         string=string_name.upper()
+         string=string_name.lower()
+         
+         3- Convert List to string: [IMP]
+         Define a new string: new_str=''
+         new=new_str.join(lis)
+         print(new)
+       
+
+Code:
+
+def swap_case(s):
+    lis=[] 
+    for item in s: # get each char in the string
+        x=item.isupper() # x=True if the char is Upper case and vice versa
+        y=item.islower() 
+
+        if x==True and y==False: # if char is uppercase
+            item=item.lower()  # convert it to lowercase
+            lis.append(item)   # and append it to list
+
+
+        if x==False and y==True: # if char is lowercase
+            item=item.upper()  # convert it to uppercase
+            lis.append(item)
+        if x==False and y==False:  # if it is neither upper or lower case i.e anything else like int,spaces etc
+            lis.append(item)  # simply append them to the list
+
+    # convert list to string
+    str_new='' # define a new string
+    final=str_new.join(lis) # convert lis to string
+    return final
+    
+if __name__ == '__main__':
+    s = input()
+    result = swap_case(s)
+    print(result)
