@@ -1,0 +1,36 @@
+Program:https://www.hackerrank.com/challenges/array-left-rotation/problem
+
+Concept: Array Reversal
+
+Code:
+import math
+import os
+import random
+import re
+import sys
+
+if __name__ == '__main__':
+    nd = input().split()
+
+    n = int(nd[0]) # length of the array
+
+    d = int(nd[1]) # index from where array will be reverse
+
+    lis = list(map(int, input().rstrip().split())) # entering the list
+    
+# code begins from here:
+    lis2 = []
+
+    for items in range(d, len(lis)): # take items from index d
+       
+        lis2.append(str(lis[items]))
+
+    for items in range(0, d):  # when list ends start from begining and take elements from there
+       
+        lis2.append(str(lis[items]))
+        
+    #converting list into string 
+    
+    str_new = ' '
+    final = str_new.join(lis2)
+    print(final)
