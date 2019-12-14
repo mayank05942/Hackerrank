@@ -1,0 +1,43 @@
+Problem:https://www.hackerrank.com/challenges/2d-array/problem
+
+Concept:1- To generate a 2D array:
+            arr=[] # initialize an empty array
+            for i in range(3): # for 3x3 array
+                arr.append(list(map(int,input().split())))
+            print(arr)
+            
+         2- To access elements in 2-D array: arr[i][j] where i represents row and j represents coloumn [ see how i and j is defined in images]
+
+Code:
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+lis=[] # define a new empty list
+# Complete the hourglassSum function below.
+def hourglassSum(arr):
+    # i represents row and j represents coloumn.
+    for i in range(1,5): # i from 1 to 4, skip the boundary conditions
+        for j in range(1,5): # j from 1 to 4
+            add=arr[i][j]+arr[i-1][j]+arr[i-1][j+1]+arr[i-1][j-1]+arr[i+1][j-1]+arr[i+1][j]+arr[i+1][j+1] 
+            lis.append(add) # append the list with sum
+    return print(max(lis)) # use max method to return the output.
+    
+
+
+
+if __name__ == '__main__':
+
+
+
+    arr = [] # define empty list/array
+
+    for _ in range(6):  # for a matrix of size 6x6  _ will iterate through 0 to 5 hence coordinate of 1st element will be (0,0)
+        arr.append(list(map(int, input().rstrip().split()))) # create an array having 6 coloumns and append it to get 6 rows too.
+
+    result = hourglassSum(arr) # calling the function to generate the output.
+
