@@ -1,0 +1,52 @@
+
+number=float(input('Enter the number you want to convert: '))
+a=int(number)
+b=number-int(number)
+
+def for_points(num):
+    lis=[]
+    count =0
+
+    while count < 10:
+        result=num * 2
+
+        if result > 1 :
+            lis.append(str(1))
+            num= result -1
+            count=count+1
+
+        if result == 1:
+            break
+
+        if result !=1 :
+            lis.append(str(0))
+            num=result
+            count=count+1
+    str_two=' '
+    lis2= str_two.join(lis)
+    return lis2
+
+
+def for_integer(num):
+    lis = []
+    while num > 0:
+        if num % 2 == 0:
+            result = num // 2
+            num = result
+            lis.append(str(0))
+            continue
+
+        if num == 1:
+            lis.append(str(1))
+            break
+
+        if num != 1:
+            result = num // 2
+            num = result
+            lis.append(str(1))
+    lis.reverse()
+    str_new = ' '
+    lis_new = str_new.join(lis)
+    return lis_new
+
+print(f"{for_integer(a)} . {for_points(b)}")
