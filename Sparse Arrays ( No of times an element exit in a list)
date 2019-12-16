@@ -1,0 +1,54 @@
+Problem: https://www.hackerrank.com/challenges/sparse-arrays/problem
+
+Concept: To count the number of times an element exit in a list:
+         
+         count= list_where to_search.count(item which needs to be searched)
+
+Code:
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+lis=[]
+# Complete the matchingStrings function below.
+def matchingStrings(strings, queries):
+
+    for items in queries:  # to access elements in queries list one by one
+        count=strings.count(items)  # and count how many times these elements exit in strings
+        lis.append(str(count)) # put the count in the list
+        
+    # converting list to column wise string format.
+    
+    str_new=' \n'
+    new=str_new.join(lis)
+    return print(new)
+
+if __name__ == '__main__':
+    
+    # Input code:
+
+    strings_count = int(input()) # defines the size of string list
+
+    strings = [] # define an empty list
+
+    for _ in range(strings_count):  # add these elements one by one
+        strings_item = input()
+        strings.append(strings_item)
+
+    queries_count = int(input())  # defines the size of queries list
+ 
+    queries = []   # define an empty list
+
+    for _ in range(queries_count):
+        queries_item = input()
+        queries.append(queries_item)
+
+    res = matchingStrings(strings, queries) # calling the function
+
+
+
+
