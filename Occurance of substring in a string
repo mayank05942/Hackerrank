@@ -1,0 +1,33 @@
+Problem: https://www.hackerrank.com/challenges/find-a-string/problem
+
+Concept: To count the non overlapping occurance in a string:
+         Use following method of string class: string_in_which_we_are_searching.count(string_to_be_searched)
+         
+         To count the overlapping occurance in a string:
+         
+         org_string = "aabaacd"
+         string_tofound = "aa"
+         count=0
+         for i in range(len(org_string):
+             if org_string[i:len(string_tofound)] == string_tofound:
+                count=count+1
+                
+          print(count)
+          
+          
+ Code: 
+ 
+ def count_substring(string, sub_string):
+    count=0
+    for i in range(len(string)):
+        if string[i:i+len(sub_string)] == sub_string:  # Use slicing method to get all the substrings of the size of sub_string
+            count=count+1
+    return count
+    
+if __name__ == '__main__':
+    string = input().strip()
+    sub_string = input().strip()
+    
+    count = count_substring(string, sub_string)
+    print(count)
+         
