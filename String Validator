@@ -1,0 +1,35 @@
+URL:https://www.hackerrank.com/challenges/string-validators/problem
+
+Concept: any function:
+         any() can take list tuple and dict as input argument and will return True if any of the value in that data structure
+         will be True
+         
+         all function:
+         all() will return true only when all values are True
+         
+         map function:
+         
+         map( function , iterable)
+         
+         Here we have used lambda expression:   lambda value:operation
+         
+Code:
+
+if __name__ == '__main__':
+    s = input()
+    lis=list(s)
+    # for aplhanumeric characters
+    out =  list(map( lambda item: item.isalnum(),lis))
+    print(any(out))
+    # for alphabetical characters
+    out= list(map(lambda item: item.isalpha(),lis))
+    print(any(out))
+    # for digit
+    out = list(map(lambda item: item.isdigit(), lis))
+    print(any(out))
+    # for uppercase
+    out = list(map(lambda item: item.islower(), lis))
+    print(any(out))
+    # for lowercase
+    out = list(map(lambda item: item.isupper(), lis))
+    print(any(out))
